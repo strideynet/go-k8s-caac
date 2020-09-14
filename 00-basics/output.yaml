@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: sheep-api
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: api
+      app.kubernetes.io/name: sheep
+      app.kubernetes.io/part-of: farm
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/component: api
+        app.kubernetes.io/name: sheep
+        app.kubernetes.io/part-of: farm
+    spec:
+      containers:
+      - image: gcr.io/farm-manager/sheep-api:latest
+        name: api
+        ports:
+        - containerPort: 80
+          name: http
+        resources: {}
+status: {}
