@@ -65,7 +65,7 @@ var deployment = appsv1.Deployment{
 
 func main() {
 	// marshal basic deployment spec
-	jsonBytes, err := json.MarshalIndent(deployment, "", "  ")
+	jsonBytes, err := json.Marshal(deployment)
 	if err != nil {
 		log.Fatalf("err occured marshalling json: %s", err)
 	}

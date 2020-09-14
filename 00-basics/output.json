@@ -1,1 +1,46 @@
-{"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"sheep-api","namespace":"default","creationTimestamp":null},"spec":{"replicas":3,"selector":{"matchLabels":{"app.kubernetes.io/component":"api","app.kubernetes.io/name":"sheep","app.kubernetes.io/part-of":"farm"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app.kubernetes.io/component":"api","app.kubernetes.io/name":"sheep","app.kubernetes.io/part-of":"farm"}},"spec":{"containers":[{"name":"api","image":"gcr.io/farm-manager/sheep-api:latest","ports":[{"name":"http","containerPort":80}],"resources":{}}]}},"strategy":{}},"status":{}}
+{
+  "kind": "Deployment",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "name": "sheep-api",
+    "namespace": "default",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "matchLabels": {
+        "app.kubernetes.io/component": "api",
+        "app.kubernetes.io/name": "sheep",
+        "app.kubernetes.io/part-of": "farm"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app.kubernetes.io/component": "api",
+          "app.kubernetes.io/name": "sheep",
+          "app.kubernetes.io/part-of": "farm"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "api",
+            "image": "gcr.io/farm-manager/sheep-api:latest",
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 80
+              }
+            ],
+            "resources": {}
+          }
+        ]
+      }
+    },
+    "strategy": {}
+  },
+  "status": {}
+}
